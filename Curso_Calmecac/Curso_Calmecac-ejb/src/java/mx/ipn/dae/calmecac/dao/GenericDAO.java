@@ -5,6 +5,7 @@
  */
 package mx.ipn.dae.calmecac.dao;
 
+import java.io.Serializable;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -19,9 +20,15 @@ public class GenericDAO {
     @PersistenceContext(unitName = "calmecacPU")
     private EntityManager em;
 
-    public void persist(Object object) {
-        em.persist(object);
-        em.flush();
+    public Integer persist(Object object) {
+        try{
+            em.persist(object);
+            em.flush();
+            return 0;
+        }catch(Exception e){
+            return -1;
+        }
+        
     }
     
     public void merge(Object object){
@@ -32,5 +39,10 @@ public class GenericDAO {
     public void remove(Object object){
         em.remove(object);
         em.flush();
+    }
+    /*Usar el getAttributes, getAnnotations, ver el atributo que tenga el @Id y
+      usar su getter para ahora solo pasar una instancia */
+    public <T>T findById(Class <T> clazz, Serializable id){
+        return (T)em.find(clazz, id);
     }
 }

@@ -37,14 +37,21 @@ public class UnidadAcademicaServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        
         String nombre=request.getParameter("nombre");
         String clave=request.getParameter("clave");
-        String acromnimo=request.getParameter("acronimo");
+        String acronimo=request.getParameter("acronimo");
+        //Integer idUnidad=Integer.parseInt(request.getParameter("id"));
+        
         UnidadAcademica unidadAcademica=new UnidadAcademica();
         unidadAcademica.setNombre(nombre);
         unidadAcademica.setTxClave(clave);
-        unidadAcademica.setTxAcronimo(acromnimo);
+        unidadAcademica.setTxAcronimo(acronimo);
+        //unidadAcademica.setIdUnidad(idUnidad);
+        
+        //unidadAcademicaEJB.eliminar(unidadAcademica.getIdUnidad());
         unidadAcademicaEJB.agregar(unidadAcademica);
+        
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");

@@ -7,7 +7,7 @@ import javax.persistence.metamodel.StaticMetamodel;
 import mx.ipn.dae.calmecac.model.Nivel;
 import mx.ipn.dae.calmecac.model.UnidadAcademica;
 
-@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2017-06-30T18:31:30")
+@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2017-07-04T18:38:19")
 @StaticMetamodel(Edificio.class)
 public class Edificio_ { 
 

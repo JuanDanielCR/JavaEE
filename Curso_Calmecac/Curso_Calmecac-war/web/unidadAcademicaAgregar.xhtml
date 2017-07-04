@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <!--f:loadBundle basename="mx.ipn.dae.calmecac.bundle.mensajes" var="msjs"/-->
+        <title>#{msjs['unidadAcademica.titulo']}</title>
+    </h:head>
+    <h:body>
+        <p:growl id="unidadAcademicaMensaje" autoUpdate="true"/>
+        <h:form id="unidadAcademicaAgregarForm">
+            <p:outputLabel id="unidadLabel" for="unidadText" value="#{msjs['unidadAcademica.unidad.label']}"/>
+            <p:inputText id="unidadText"   value="#{unidadAcademica.bean.nombre}" required="true"/>
+            <br/>
+            <p:outputLabel id="claveLabel" for="claveText" value="#{msjs['unidadAcademica.clave.label']}"/>
+            <p:inputText id="claveText"   value="#{unidadAcademica.bean.txClave}"/>
+            <br/>
+            <p:outputLabel id="acronimoLabel" for="acronimoText" value="#{msjs['unidadAcademica.acronimo.label']}"/>
+            <p:inputText id="acronimoText"   value="#{unidadAcademica.bean.txAcronimo}"/>
+            <br/>
+            <p:commandButton id="unidadAcademicaAgregarButton" value="#{msjs['unidadAcademica.boton.label']}" action="#{unidadAcademica.agregar}"/>
+        </h:form>
+    </h:body>
+</html>
+

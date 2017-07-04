@@ -22,7 +22,23 @@ public class UnidadAcademicaEJB {
     @EJB
     GenericDAO genericDAO;
     
-    public void agregar(UnidadAcademica unidadAcademica){
-        genericDAO.persist(unidadAcademica);
+    public Integer agregar(UnidadAcademica unidadAcademica){
+        return genericDAO.persist(unidadAcademica);
+    }
+    
+    public void actualizar(UnidadAcademica unidadAcademica){
+        genericDAO.merge(unidadAcademica);
+    }
+    
+    public void eliminar(Integer id){
+        UnidadAcademica unidadAcademica = genericDAO.findById(UnidadAcademica.class, id);
+        if(unidadAcademica != null){
+            genericDAO.remove(unidadAcademica);
+        }    
+    }
+    
+    public UnidadAcademica findUnidadAcademicaById(Integer id){
+        UnidadAcademica unidadAcademica=genericDAO.findById(UnidadAcademica.class, id);
+        return unidadAcademica;
     }
 }

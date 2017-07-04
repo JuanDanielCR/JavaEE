@@ -8,7 +8,7 @@ import mx.ipn.dae.calmecac.model.Direccion;
 import mx.ipn.dae.calmecac.model.Entidad;
 import mx.ipn.dae.calmecac.model.MunicipioPK;
 
-@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2017-06-30T18:31:30")
+@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2017-07-04T18:38:19")
 @StaticMetamodel(Municipio.class)
 public class Municipio_ { 
 
